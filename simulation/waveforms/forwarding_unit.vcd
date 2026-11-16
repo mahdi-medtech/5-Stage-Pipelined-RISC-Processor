@@ -1,0 +1,136 @@
+$date
+	Mon Nov 16 15:39:48 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module forwarding_unit_tb $end
+$var wire 2 ! ForwardB [1:0] $end
+$var wire 2 " ForwardA [1:0] $end
+$var reg 1 # EX_MEM_RegWrite $end
+$var reg 5 $ EX_MEM_rd [4:0] $end
+$var reg 5 % ID_EX_rs1 [4:0] $end
+$var reg 5 & ID_EX_rs2 [4:0] $end
+$var reg 1 ' MEM_WB_RegWrite $end
+$var reg 5 ( MEM_WB_rd [4:0] $end
+$var integer 32 ) fail_count [31:0] $end
+$var integer 32 * pass_count [31:0] $end
+$scope module uut $end
+$var wire 1 # EX_MEM_RegWrite $end
+$var wire 5 + EX_MEM_rd [4:0] $end
+$var wire 5 , ID_EX_rs1 [4:0] $end
+$var wire 5 - ID_EX_rs2 [4:0] $end
+$var wire 1 ' MEM_WB_RegWrite $end
+$var wire 5 . MEM_WB_rd [4:0] $end
+$var reg 2 / ForwardA [1:0] $end
+$var reg 2 0 ForwardB [1:0] $end
+$upscope $end
+$scope task check $end
+$var reg 2 1 expected_A [1:0] $end
+$var reg 2 2 expected_B [1:0] $end
+$var integer 32 3 test_number [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+b10 -
+b1 ,
+b0 +
+b0 *
+b0 )
+b0 (
+0'
+b10 &
+b1 %
+b0 $
+0#
+b0 "
+b0 !
+$end
+#10000
+b10 "
+b10 /
+b10 3
+b10 1
+1#
+b1 $
+b1 +
+b1 *
+#20000
+b10 !
+b10 0
+b0 "
+b0 /
+b11 3
+b10 2
+b0 1
+b10 $
+b10 +
+b10 *
+#30000
+b1 "
+b1 /
+b0 !
+b0 0
+b100 3
+b0 2
+b1 1
+1'
+b1 (
+b1 .
+0#
+b11 *
+#40000
+b1 !
+b1 0
+b0 "
+b0 /
+b101 3
+b1 2
+b0 1
+b10 (
+b10 .
+b100 *
+#50000
+b10 "
+b10 /
+b0 !
+b0 0
+b110 3
+b0 2
+b10 1
+b1 (
+b1 .
+1#
+b1 $
+b1 +
+b101 *
+#60000
+b0 "
+b0 /
+b111 3
+b0 1
+b0 (
+b0 .
+b0 $
+b0 +
+b0 &
+b0 -
+b0 %
+b0 ,
+b110 *
+#70000
+b111 *
