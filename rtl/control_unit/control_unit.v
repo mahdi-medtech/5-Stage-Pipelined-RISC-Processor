@@ -32,7 +32,7 @@ always @(*) begin
         7'b0010011: begin
             RegWrite = 1;
             ALUSrc = 1;
-            ALUOp = 2'b10;
+            ALUOp = 2'b00;
         end
 
         // Load Word

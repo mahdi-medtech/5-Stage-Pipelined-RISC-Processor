@@ -1,3 +1,4 @@
 alu_test
 *.out
 *_test
+processor_compile

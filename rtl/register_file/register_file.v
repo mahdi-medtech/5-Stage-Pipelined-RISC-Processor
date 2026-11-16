@@ -14,9 +14,17 @@ module register_file (
 
 reg [31:0] registers [0:31];
 
-// Read operation
-assign read_data1 = (read_addr1 == 0) ? 32'b0 : registers[read_addr1];
-assign read_data2 = (read_addr2 == 0) ? 32'b0 : registers[read_addr2];
+// Read port 1 with writeback bypass
+assign read_data1 =
+    (read_addr1 == 0) ? 32'b0 :
+    (reg_write && write_addr == read_addr1 && write_addr != 0)
+    ? write_data : registers[read_addr1];
+
+// Read port 2 with writeback bypass
+assign read_data2 =
+    (read_addr2 == 0) ? 32'b0 :
+    (reg_write && write_addr == read_addr2 && write_addr != 0)
+    ? write_data : registers[read_addr2];
 
 // Write operation
 always @(posedge clk) begin
