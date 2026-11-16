@@ -1,0 +1,100 @@
+module id_ex(
+    input clk,
+    input reset,
+    input enable,
+    input flush,
+
+    input [31:0] pc_in,
+    input [31:0] rs1_data_in,
+    input [31:0] rs2_data_in,
+    input [31:0] immediate_in,
+
+    input [4:0] rs1_in,
+    input [4:0] rs2_in,
+    input [4:0] rd_in,
+
+    input [2:0] funct3_in,
+    input [6:0] funct7_in,
+
+    input RegWrite_in,
+    input ALUSrc_in,
+    input MemRead_in,
+    input MemWrite_in,
+    input MemToReg_in,
+    input Branch_in,
+    input [1:0] ALUOp_in,
+
+    output reg [31:0] pc_out,
+    output reg [31:0] rs1_data_out,
+    output reg [31:0] rs2_data_out,
+    output reg [31:0] immediate_out,
+
+    output reg [4:0] rs1_out,
+    output reg [4:0] rs2_out,
+    output reg [4:0] rd_out,
+
+    output reg [2:0] funct3_out,
+    output reg [6:0] funct7_out,
+
+    output reg RegWrite_out,
+    output reg ALUSrc_out,
+    output reg MemRead_out,
+    output reg MemWrite_out,
+    output reg MemToReg_out,
+    output reg Branch_out,
+    output reg [1:0] ALUOp_out
+);
+
+always @(posedge clk) begin
+
+    if (reset || flush) begin
+
+        pc_out <= 0;
+        rs1_data_out <= 0;
+        rs2_data_out <= 0;
+        immediate_out <= 0;
+
+        rs1_out <= 0;
+        rs2_out <= 0;
+        rd_out <= 0;
+
+        funct3_out <= 0;
+        funct7_out <= 0;
+
+        RegWrite_out <= 0;
+        ALUSrc_out <= 0;
+        MemRead_out <= 0;
+        MemWrite_out <= 0;
+        MemToReg_out <= 0;
+        Branch_out <= 0;
+        ALUOp_out <= 0;
+
+    end
+
+    else if (enable) begin
+
+        pc_out <= pc_in;
+        rs1_data_out <= rs1_data_in;
+        rs2_data_out <= rs2_data_in;
+        immediate_out <= immediate_in;
+
+        rs1_out <= rs1_in;
+        rs2_out <= rs2_in;
+        rd_out <= rd_in;
+
+        funct3_out <= funct3_in;
+        funct7_out <= funct7_in;
+
+        RegWrite_out <= RegWrite_in;
+        ALUSrc_out <= ALUSrc_in;
+        MemRead_out <= MemRead_in;
+        MemWrite_out <= MemWrite_in;
+        MemToReg_out <= MemToReg_in;
+        Branch_out <= Branch_in;
+        ALUOp_out <= ALUOp_in;
+
+    end
+
+end
+
+endmodule
