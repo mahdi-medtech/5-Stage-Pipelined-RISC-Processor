@@ -41,6 +41,10 @@ module processor_tb;
                  uut.RF.registers[4],
                  $signed(uut.RF.registers[4]));
 
+        $display("Register x5 = %0d", uut.RF.registers[5]);
+        
+        $display("Register x7 = %0d", uut.RF.registers[7]);
+
         $display("Data Memory[0] = %0d",
                  uut.DM.memory[0]);
 
