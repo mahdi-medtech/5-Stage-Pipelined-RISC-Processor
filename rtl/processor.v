@@ -1,6 +1,11 @@
 module processor (
     input wire clk,
-    input wire reset
+    input wire reset,
+
+    output wire [31:0] pc_debug,
+    output wire [31:0] result_debug,
+    output wire branch_debug,
+    output wire stall_debug
 );
 
     // =====================================================
@@ -407,5 +412,10 @@ module processor (
 
     assign writeback_rd = MEM_WB_rd;
     assign writeback_RegWrite = MEM_WB_RegWrite;
+
+    assign pc_debug = pc_current;
+    assign result_debug = writeback_data;
+    assign branch_debug = branch_taken;
+    assign stall_debug = ~PCWrite;
 
 endmodule
