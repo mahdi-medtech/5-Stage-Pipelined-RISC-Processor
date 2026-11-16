@@ -1,0 +1,120 @@
+$date
+	Mon Nov 16 15:45:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module hazard_detection_tb $end
+$var wire 1 ! PCWrite $end
+$var wire 1 " IF_ID_Write $end
+$var wire 1 # ID_EX_Flush $end
+$var reg 1 $ ID_EX_MemRead $end
+$var reg 5 % ID_EX_rd [4:0] $end
+$var reg 5 & IF_ID_rs1 [4:0] $end
+$var reg 5 ' IF_ID_rs2 [4:0] $end
+$var integer 32 ( fail_count [31:0] $end
+$var integer 32 ) pass_count [31:0] $end
+$scope module uut $end
+$var wire 1 $ ID_EX_MemRead $end
+$var wire 5 * ID_EX_rd [4:0] $end
+$var wire 5 + IF_ID_rs1 [4:0] $end
+$var wire 5 , IF_ID_rs2 [4:0] $end
+$var reg 1 # ID_EX_Flush $end
+$var reg 1 " IF_ID_Write $end
+$var reg 1 ! PCWrite $end
+$upscope $end
+$scope task check $end
+$var reg 1 - expected_ID_EX_Flush $end
+$var reg 1 . expected_IF_ID_Write $end
+$var reg 1 / expected_PCWrite $end
+$var integer 32 0 test_number [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 0
+1/
+1.
+0-
+b100 ,
+b11 +
+b11 *
+b0 )
+b0 (
+b100 '
+b11 &
+b11 %
+0$
+0#
+1"
+1!
+$end
+#10000
+1#
+0"
+0!
+b10 0
+1-
+0.
+0/
+1$
+b1 )
+#20000
+1#
+0"
+0!
+b11 0
+b11 '
+b11 ,
+b101 &
+b101 +
+b10 )
+#30000
+0#
+1"
+1!
+b100 0
+0-
+1.
+1/
+b110 '
+b110 ,
+b11 )
+#40000
+b101 0
+b0 '
+b0 ,
+b0 &
+b0 +
+b0 %
+b0 *
+b100 )
+#50000
+b110 0
+b11 &
+b11 +
+0$
+b11 %
+b11 *
+b101 )
+#60000
+1#
+0"
+0!
+b111 0
+1-
+0.
+0/
+b11 '
+b11 ,
+1$
+b110 )
+#70000
+b111 )
