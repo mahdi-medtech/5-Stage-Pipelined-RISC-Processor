@@ -78,21 +78,19 @@ The initial instruction subset includes:
 5-Stage-Pipelined-RISC-Processor/
 │
 ├── rtl/
-│   ├── alu.v
-│   ├── register_file.v
-│   ├── control_unit.v
-│   ├── instruction_memory.v
-│   ├── data_memory.v
-│   ├── forwarding_unit.v
-│   ├── hazard_detection.v
-│   └── risc_processor.v
+│   └── alu/
+│       └── alu.v
 │
 ├── testbench/
-│   ├── alu_tb.v
-│   └── processor_tb.v
+│   └── alu/
+│       └── alu_tb.v
 │
 ├── simulation/
+│   └── waveforms/
+│       └── alu.vcd
 │
+├── docs/
+├── constraints/
 ├── README.md
 └── .gitignore
 ```
